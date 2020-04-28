@@ -11,7 +11,7 @@ public class BaseClient {
     public Response get(RequestSpecification requestSpecification)
     {
 
-        response = given().spec(requestSpecification).get();
+        response = given().spec(requestSpecification).when().get();
         return response;
     }
 }
