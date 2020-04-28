@@ -9,4 +9,5 @@ public class GetEmployeeClient extends BaseClient {
     {
         return get(requestSpecification);
     }
+
 }

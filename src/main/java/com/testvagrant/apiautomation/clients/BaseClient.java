@@ -14,4 +14,9 @@ public class BaseClient {
         response = given().spec(requestSpecification).when().get();
         return response;
     }
+
+    public Response post(RequestSpecification requestSpecification) {
+        response = given().spec(requestSpecification).post();
+        return response;
+    }
 }
