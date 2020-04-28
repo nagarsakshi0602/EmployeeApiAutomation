@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.testvagrant.apiautomation.tests.EmployeeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-28T04:34:31" hostname="TV-Macbook-Pro.local" time="1.551">
+<testsuite name="com.testvagrant.apiautomation.tests.EmployeeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-28T04:44:17" hostname="TV-Macbook-Pro.local" time="1.616">
   <properties/>
-  <testcase name="addEmployeeAndValidateResponse" classname="com.testvagrant.apiautomation.tests.EmployeeTest" time="1.551"/>
-  <system-out><![CDATA[200
-]]></system-out>
+  <testcase name="addEmployeeAndValidateResponse" classname="com.testvagrant.apiautomation.tests.EmployeeTest" time="1.616"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
