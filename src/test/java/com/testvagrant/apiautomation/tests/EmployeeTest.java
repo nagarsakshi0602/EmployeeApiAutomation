@@ -2,6 +2,7 @@ package com.testvagrant.apiautomation.tests;
 
 import com.testvagrant.apiautomation.clients.employee.GetEmployeeClient;
 import com.testvagrant.apiautomation.requests.BaseRequest;
+import com.testvagrant.apiautomation.responses.employee.EmployeeResponse;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
@@ -25,9 +26,18 @@ public class EmployeeTest {
 
     @Test
     public void addEmployeeAndValidateResponse() {
-        Assert.assertEquals(getEmployeeClient
+        EmployeeResponse emp = getEmployeeClient
                 .getEmployees(requestSpecification)
-                .getStatusCode(), 200);
+                .getBody()
+                .as(EmployeeResponse.class);
+        System.out.println(emp.status
+                + "     ----------------------   "
+                + emp.data.get(0).employee_name
+                + ","
+                + emp.data.get(0).employee_salary
+                + ","
+                + emp.data.get(0).employee_age);
+
 
     }
 }
