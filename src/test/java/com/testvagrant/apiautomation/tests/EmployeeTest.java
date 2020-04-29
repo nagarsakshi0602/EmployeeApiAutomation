@@ -2,10 +2,10 @@ package com.testvagrant.apiautomation.tests;
 
 import com.testvagrant.apiautomation.clients.employee.CreateEmployeeClient;
 import com.testvagrant.apiautomation.clients.employee.GetEmployeeClient;
+import com.testvagrant.apiautomation.clients.employee.UpdateEmployeeClient;
 import com.testvagrant.apiautomation.requests.BaseRequest;
 import com.testvagrant.apiautomation.requests.employee.EmployeeRequest;
 import com.testvagrant.apiautomation.responses.employee.EmployeeResponse;
-import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
@@ -18,6 +18,7 @@ public class EmployeeTest {
 
     GetEmployeeClient getEmployeeClient;
     CreateEmployeeClient createEmployeeClient;
+    UpdateEmployeeClient updateEmployeeClient;
     BaseRequest baseRequest;
     RequestSpecification requestSpecification;
     EmployeeResponse emp;
@@ -28,6 +29,7 @@ public class EmployeeTest {
         requestSpecification = baseRequest.build();
         getEmployeeClient = new GetEmployeeClient();
         createEmployeeClient = new CreateEmployeeClient();
+        updateEmployeeClient = new UpdateEmployeeClient();
     }
 
     @Test
@@ -36,12 +38,12 @@ public class EmployeeTest {
                 .getEmployees(requestSpecification.basePath("/employees"))
                 .getBody()
                 .as(EmployeeResponse.class);
-        Assert.assertEquals(emp.status,"success");
+        Assert.assertEquals(emp.status, "success");
         Assert.assertNotNull(emp.data);
     }
+
     @Test
-    public void createEmployee()
-    {
+    public void createEmployee() {
         EmployeeRequest employeeRequest = new EmployeeRequest();
         employeeRequest.setName("test");
         employeeRequest.setSalary("12333");
@@ -53,4 +55,18 @@ public class EmployeeTest {
                         .contentType(ContentType.JSON)).getStatusCode());
 
     }
+    @Test
+    public void updateEmployee()
+    {
+        EmployeeRequest employeeRequest = new EmployeeRequest();
+        employeeRequest.setName("test");
+        employeeRequest.setSalary("12333");
+        employeeRequest.setAge("23");
+        System.out.println(updateEmployeeClient
+                .updateEmployee(requestSpecification
+                        .basePath("/update/3")
+                        .body(employeeRequest)
+                        .contentType(ContentType.JSON)).getStatusCode());
+    }
+
 }
