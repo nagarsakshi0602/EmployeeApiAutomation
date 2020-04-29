@@ -1,6 +1,9 @@
 package com.testvagrant.apiautomation.requests.employee;
 
-public class EmployeeRequest {
+import com.testvagrant.apiautomation.requests.BaseRequest;
+import io.restassured.specification.RequestSpecification;
+
+public class EmployeeRequest extends BaseRequest {
     public String name;
     public String salary;
     public String age;
@@ -28,4 +31,5 @@ public class EmployeeRequest {
     public void setAge(String age) {
         this.age = age;
     }
+
 }

@@ -1,8 +1,6 @@
 package com.testvagrant.apiautomation.tests;
 
-import com.testvagrant.apiautomation.clients.employee.CreateEmployeeClient;
-import com.testvagrant.apiautomation.clients.employee.GetEmployeeClient;
-import com.testvagrant.apiautomation.clients.employee.UpdateEmployeeClient;
+import com.testvagrant.apiautomation.clients.employee.EmployeeClient;
 import com.testvagrant.apiautomation.requests.BaseRequest;
 import com.testvagrant.apiautomation.requests.employee.EmployeeRequest;
 import com.testvagrant.apiautomation.responses.employee.EmployeeResponse;
@@ -16,9 +14,8 @@ import static io.restassured.RestAssured.given;
 
 public class EmployeeTest {
 
-    GetEmployeeClient getEmployeeClient;
-    CreateEmployeeClient createEmployeeClient;
-    UpdateEmployeeClient updateEmployeeClient;
+
+    EmployeeClient employeeClient;
     BaseRequest baseRequest;
     RequestSpecification requestSpecification;
     EmployeeResponse emp;
@@ -27,14 +24,13 @@ public class EmployeeTest {
     public void setUp() {
         baseRequest = new BaseRequest();
         requestSpecification = baseRequest.build();
-        getEmployeeClient = new GetEmployeeClient();
-        createEmployeeClient = new CreateEmployeeClient();
-        updateEmployeeClient = new UpdateEmployeeClient();
+        employeeClient = new EmployeeClient();
+
     }
 
     @Test
     public void getAllEmployeesAndValidate() {
-        emp = getEmployeeClient
+        emp = employeeClient
                 .getEmployees(requestSpecification.basePath("/employees"))
                 .getBody()
                 .as(EmployeeResponse.class);
@@ -48,7 +44,7 @@ public class EmployeeTest {
         employeeRequest.setName("test");
         employeeRequest.setSalary("12333");
         employeeRequest.setAge("23");
-        System.out.println(createEmployeeClient
+        System.out.println(employeeClient
                 .postEmployee(requestSpecification
                         .basePath("/create")
                         .body(employeeRequest)
@@ -62,11 +58,20 @@ public class EmployeeTest {
         employeeRequest.setName("test");
         employeeRequest.setSalary("12333");
         employeeRequest.setAge("23");
-        System.out.println(updateEmployeeClient
+        System.out.println(employeeClient
                 .updateEmployee(requestSpecification
                         .basePath("/update/3")
                         .body(employeeRequest)
                         .contentType(ContentType.JSON)).getStatusCode());
     }
-
+    @Test
+    public  void deleteEmployee()
+    {
+        emp = employeeClient
+                .getEmployees(requestSpecification.basePath("/employees"))
+                .getBody()
+                .as(EmployeeResponse.class);
+        Assert.assertEquals(emp.status, "success");
+        Assert.assertNotNull(emp.data);
+    }
 }
