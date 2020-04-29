@@ -1,4 +1,4 @@
-package com.testvagrant.apiautomation.responses.employee;
+package com.testvagrant.apiautomation.responses.employee.getemlpoyeedetail;
 
 public class EmployeeDataResponse {
     public String id;

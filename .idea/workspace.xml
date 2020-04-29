@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea817c67-b1c0-4983-805d-628145c815d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/clients/employee/EmployeeClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/requests/employee/createemployee/CreateEmployeeRequestBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/responses/employee/getemlpoyeedetail/EmployeeDataResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/responses/employee/getemlpoyeedetail/EmployeeResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/clients/BaseClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/clients/BaseClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/clients/employee/CreateEmployeeClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/clients/employee/GetEmployeeClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/clients/employee/UpdateEmployeeClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/requests/employee/EmployeeRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/requests/employee/EmployeeRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/requests/employee/EmployeeRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/requests/employee/createemployee/CreateEmployeeRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/responses/employee/EmployeeDataResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/responses/employee/getallemployees/EmployeeDataResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/responses/employee/EmployeeResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/responses/employee/getallemployees/EmployeeResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/testvagrant/apiautomation/tests/EmployeeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/testvagrant/apiautomation/tests/EmployeeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +42,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.testvagrant.apiautomation.responses.employee.getemlpoyeedetail" />
+    </key>
   </component>
   <component name="RunManager" selected="Gradle.EmployeeTest.updateEmployee">
     <configuration name="EmployeeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -152,10 +157,10 @@
     </state>
     <state x="533" y="131" key="#com.intellij.ide.util.MemberChooser/0.23.1440.826@0.23.1440.826" timestamp="1588070926249" />
     <state x="533" y="131" key="#com.intellij.ide.util.MemberChooser/0.23.1440.827@0.23.1440.827" timestamp="1588049740519" />
-    <state x="430" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588070952982">
+    <state x="430" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588166627105">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state x="430" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.826@0.23.1440.826" timestamp="1588070952982" />
+    <state x="430" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.826@0.23.1440.826" timestamp="1588166627105" />
     <state x="458" y="191" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588165447265">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
