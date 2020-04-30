@@ -7,7 +7,7 @@ public class UpdateEmployeeRequestBuilder {
         updateEmployeeRequest = new UpdateEmployeeRequest();
     }
 
-    public UpdateEmployeeRequestBuilder setEmployeedetails(String name, String salary, String age) {
+    public UpdateEmployeeRequestBuilder setEmployeeDetails(String name, String salary, String age) {
         updateEmployeeRequest.name = name;
         updateEmployeeRequest.salary = salary;
         updateEmployeeRequest.age = age;

@@ -6,6 +6,8 @@ import com.testvagrant.apiautomation.responses.employee.getallemployees.GetAllEm
 import com.testvagrant.apiautomation.responses.employee.getemployeedetail.GetEmployeeDetailResponse;
 import com.testvagrant.apiautomation.responses.employee.updateemployee.UpdateEmployeeResponse;
 import com.testvagrant.apiautomation.utilities.YamlReader;
+import io.restassured.response.Response;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -20,6 +22,7 @@ public class EmployeeTest {
     CreateEmployeeResponse createEmployee;
     UpdateEmployeeResponse updateEmployee;
     GetEmployeeDetailResponse getEmployeeDetail;
+    private Response response;
 
     public EmployeeTest() {
         yaml = new YamlReader("src/test/resources/TestData/data.yml");
@@ -36,6 +39,7 @@ public class EmployeeTest {
                 .getEmployees()
                 .getBody()
                 .as(GetAllEmployeeResponse.class);
+
         Assert.assertEquals(getAllEmployee.status, "success");
         Assert.assertNotNull(getAllEmployee.data);
     }
@@ -50,10 +54,11 @@ public class EmployeeTest {
                 .getEmployee(id)
                 .getBody()
                 .as(GetEmployeeDetailResponse.class);
+
         Assert.assertEquals(getEmployeeDetail.status, "success");
-        Assert.assertEquals(getEmployeeDetail.data.employee_name,name);
-        Assert.assertEquals(getEmployeeDetail.data.employee_salary,salary);
-        Assert.assertEquals(getEmployeeDetail.data.employee_age,age);
+        Assert.assertEquals(getEmployeeDetail.data.employee_name, name);
+        Assert.assertEquals(getEmployeeDetail.data.employee_salary, salary);
+        Assert.assertEquals(getEmployeeDetail.data.employee_age, age);
     }
 
     @Test
@@ -69,18 +74,37 @@ public class EmployeeTest {
         Assert.assertEquals(createEmployee.data.salary, salary);
         Assert.assertEquals(createEmployee.data.age, age);
 
+        int id = Integer.parseInt(createEmployee.data.id);
+
+        getEmployeeDetail = employeeClient
+                .getEmployee(id)
+                .getBody()
+                .as(GetEmployeeDetailResponse.class);
+        Assert.assertEquals(getEmployeeDetail.data.employee_name, name);
+        Assert.assertEquals(getEmployeeDetail.data.employee_salary, salary);
+        Assert.assertEquals(getEmployeeDetail.data.employee_age, age);
+
     }
 
     @Test
     public void updateEmployee() {
         int id = Integer.parseInt(getYamlValue("EmployeeDetail.id"));
-        String name = getYamlValue("EmployeeDetail.name");
+        String name = getYamlValue("EmployeeDetail.name") + RandomStringUtils.randomAlphabetic(2).toLowerCase();
         String salary = getYamlValue("EmployeeDetail.salary");
         String age = getYamlValue("EmployeeDetail.age");
         updateEmployee = employeeClient
                 .updateEmployee(id, name, salary, age)
                 .as(UpdateEmployeeResponse.class);
+
         Assert.assertEquals(updateEmployee.status, "success");
+
+        getEmployeeDetail = employeeClient
+                .getEmployee(id)
+                .getBody()
+                .as(GetEmployeeDetailResponse.class);
+        Assert.assertEquals(getEmployeeDetail.data.employee_name, name);
+        Assert.assertEquals(getEmployeeDetail.data.employee_salary, salary);
+        Assert.assertEquals(getEmployeeDetail.data.employee_age, age);
 
     }
 

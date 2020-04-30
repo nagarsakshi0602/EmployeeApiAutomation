@@ -34,7 +34,7 @@ public class EmployeeClient extends BaseClient {
 
     public Response updateEmployee(int id, String name, String salary, String age) {
         UpdateEmployeeRequest updateEmployeeRequest = new UpdateEmployeeRequestBuilder()
-                .setEmployeedetails(name, salary, age)
+                .setEmployeeDetails(name, salary, age)
                 .build();
         String basePath = getProperty("updateEmployee") + id;
         response = put(basePath, updateEmployeeRequest);
