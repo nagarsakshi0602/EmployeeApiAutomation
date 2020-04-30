@@ -2,33 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea817c67-b1c0-4983-805d-628145c815d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/responses/employee/createemployee/CreateEmployeeResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/responses/employee/createemployee/EmployeeDataResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/responses/employee/updateemployee/EmployeeDataResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/responses/employee/updateemployee/UpdateEmployeeResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/testvagrant/apiautomation/clients/BaseClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/testvagrant/apiautomation/clients/BaseClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/testvagrant/apiautomation/tests/EmployeeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/testvagrant/apiautomation/tests/EmployeeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.testvagrant.apiautomation.tests.EmployeeTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.testvagrant.apiautomation.tests.EmployeeTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.testvagrant.apiautomation.tests.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.testvagrant.apiautomation.tests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.testvagrant.apiautomation.tests.EmployeeTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.testvagrant.apiautomation.tests.EmployeeTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/clients/BaseClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/clients/BaseClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/clients/employee/EmployeeClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/clients/employee/EmployeeClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/responses/employee/getallemployees/EmployeeResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testvagrant/apiautomation/responses/employee/getallemployees/GetAllEmployeeResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/testvagrant/apiautomation/tests/EmployeeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/testvagrant/apiautomation/tests/EmployeeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -221,31 +194,31 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="458" y="191" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.826@0.23.1440.826" timestamp="1588165447265" />
-    <state width="1358" height="198" key="GridCell.Tab.0.bottom" timestamp="1588224207050">
+    <state width="1358" height="198" key="GridCell.Tab.0.bottom" timestamp="1588225114709">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
-    <state width="1358" height="198" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1588224207050" />
+    <state width="1358" height="198" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1588225114709" />
     <state width="1358" height="198" key="GridCell.Tab.0.bottom/0.23.1440.825@0.23.1440.825" timestamp="1588221834028" />
     <state width="1358" height="198" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1588071225583" />
     <state width="1358" height="198" key="GridCell.Tab.0.bottom/0.23.1440.827@0.23.1440.827" timestamp="1588163725334" />
-    <state width="1358" height="198" key="GridCell.Tab.0.center" timestamp="1588224207049">
+    <state width="1358" height="198" key="GridCell.Tab.0.center" timestamp="1588225114709">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
-    <state width="1358" height="198" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1588224207049" />
+    <state width="1358" height="198" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1588225114709" />
     <state width="1358" height="198" key="GridCell.Tab.0.center/0.23.1440.825@0.23.1440.825" timestamp="1588221834027" />
     <state width="1358" height="198" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1588071225582" />
     <state width="1358" height="198" key="GridCell.Tab.0.center/0.23.1440.827@0.23.1440.827" timestamp="1588163725334" />
-    <state width="1358" height="198" key="GridCell.Tab.0.left" timestamp="1588224207048">
+    <state width="1358" height="198" key="GridCell.Tab.0.left" timestamp="1588225114707">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
-    <state width="1358" height="198" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1588224207048" />
+    <state width="1358" height="198" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1588225114707" />
     <state width="1358" height="198" key="GridCell.Tab.0.left/0.23.1440.825@0.23.1440.825" timestamp="1588221834026" />
     <state width="1358" height="198" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1588071225580" />
     <state width="1358" height="198" key="GridCell.Tab.0.left/0.23.1440.827@0.23.1440.827" timestamp="1588163725333" />
-    <state width="1358" height="198" key="GridCell.Tab.0.right" timestamp="1588224207050">
+    <state width="1358" height="198" key="GridCell.Tab.0.right" timestamp="1588225114709">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
-    <state width="1358" height="198" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1588224207050" />
+    <state width="1358" height="198" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1588225114709" />
     <state width="1358" height="198" key="GridCell.Tab.0.right/0.23.1440.825@0.23.1440.825" timestamp="1588221834027" />
     <state width="1358" height="198" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1588071225582" />
     <state width="1358" height="198" key="GridCell.Tab.0.right/0.23.1440.827@0.23.1440.827" timestamp="1588163725334" />
@@ -279,38 +252,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/testvagrant/apiautomation/tests/EmployeeTest.java</url>
-          <line>28</line>
+          <line>23</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/testvagrant/apiautomation/tests/EmployeeTest.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/testvagrant/apiautomation/tests/EmployeeTest.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/testvagrant/apiautomation/tests/EmployeeTest.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/testvagrant/apiautomation/tests/EmployeeTest.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/testvagrant/apiautomation/tests/EmployeeTest.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/testvagrant/apiautomation/tests/EmployeeTest.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

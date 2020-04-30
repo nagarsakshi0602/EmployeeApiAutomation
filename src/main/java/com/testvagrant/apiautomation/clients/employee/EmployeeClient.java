@@ -9,6 +9,8 @@ import com.testvagrant.apiautomation.requests.employee.updateemployee.UpdateEmpl
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
+import static com.testvagrant.apiautomation.utilities.ConfigPropertyReader.getProperty;
+
 public class EmployeeClient extends BaseClient {
     Response response;
 
@@ -21,7 +23,7 @@ public class EmployeeClient extends BaseClient {
        CreateEmployeeRequest createEmployeeRequest = new CreateEmployeeRequestBuilder()
                 .setEmployeeDetails(name,salary,age)
                 .build();
-        String basePath = "/create";
+        String basePath = getProperty("createEmployee");
         return post(basePath,createEmployeeRequest);
     }
     public Response deleteEmployee(RequestSpecification requestSpecification) {
@@ -32,18 +34,18 @@ public class EmployeeClient extends BaseClient {
         UpdateEmployeeRequest updateEmployeeRequest = new UpdateEmployeeRequestBuilder()
                 .setEmployeedetails(name,salary,age)
                 .build();
-        String basePath = "/update/"+id;
+        String basePath = getProperty("updateEmployee")+id;
         response = put(basePath,updateEmployeeRequest);
         return response;
     }
     public Response getEmployees()
     {
-        String basePath = "/employees";
+        String basePath = getProperty("allEmployees");
         return get(basePath);
     }
     public Response getEmployee(int id)
     {
-        String basePath = "/employee/"+id;
+        String basePath = getProperty("employee")+id;
         return get(basePath);
     }
 }

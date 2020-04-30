@@ -3,6 +3,8 @@ package com.testvagrant.apiautomation.requests;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 
+import static com.testvagrant.apiautomation.utilities.ConfigPropertyReader.getProperty;
+
 public class BaseRequest {
 
     private RequestSpecBuilder builder;
@@ -11,7 +13,7 @@ public class BaseRequest {
     public RequestSpecification build()
     {
         builder = new RequestSpecBuilder();
-        builder.setBaseUri("http://dummy.restapiexample.com/api/v1");
+        builder.setBaseUri(getProperty("baseUrl"));
         requestSpec = builder.build();
         return  requestSpec;
     }
