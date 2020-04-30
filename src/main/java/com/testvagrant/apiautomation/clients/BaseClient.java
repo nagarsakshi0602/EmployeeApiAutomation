@@ -8,20 +8,37 @@ import static io.restassured.RestAssured.when;
 
 public class BaseClient {
     Response response;
+    protected RequestSpecification requestSpecification;
 
-    public Response get(RequestSpecification requestSpecification) {
 
-        response = given().spec(requestSpecification).when().get();
+    public Response get(String basePath) {
+
+        response = given()
+                .spec(requestSpecification)
+                .basePath(basePath)
+                .when()
+                .get();
         return response;
     }
 
-    public Response post(RequestSpecification requestSpecification) {
-        response = given().spec(requestSpecification).post();
+    public Response post(String basePath,Object body) {
+        response = given()
+                .spec(requestSpecification)
+                .basePath(basePath)
+                .and()
+                .body(body)
+                .when()
+                .post();
         return response;
     }
 
-    public Response put(RequestSpecification requestSpecification) {
-        response = given().spec(requestSpecification).put();
+    public Response put(String basePath,Object body) {
+        response = given()
+                .spec(requestSpecification)
+                .basePath(basePath)
+                .body(body)
+                .when()
+                .put();
         return response;
     }
 

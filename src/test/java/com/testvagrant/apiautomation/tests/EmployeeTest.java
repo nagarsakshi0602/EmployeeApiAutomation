@@ -1,11 +1,10 @@
 package com.testvagrant.apiautomation.tests;
 
 import com.testvagrant.apiautomation.clients.employee.EmployeeClient;
-import com.testvagrant.apiautomation.requests.BaseRequest;
-import com.testvagrant.apiautomation.requests.employee.createemployee.CreateEmployeeRequest;
-import com.testvagrant.apiautomation.responses.employee.getallemployees.EmployeeResponse;
-import io.restassured.http.ContentType;
-import io.restassured.specification.RequestSpecification;
+import com.testvagrant.apiautomation.responses.employee.createemployee.CreateEmployeeResponse;
+import com.testvagrant.apiautomation.responses.employee.getallemployees.GetAllEmployeeResponse;
+import com.testvagrant.apiautomation.responses.employee.getemployeedetail.GetEmployeeDetailResponse;
+import com.testvagrant.apiautomation.responses.employee.updateemployee.UpdateEmployeeResponse;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -16,62 +15,64 @@ public class EmployeeTest {
 
 
     EmployeeClient employeeClient;
-    BaseRequest baseRequest;
-    RequestSpecification requestSpecification;
-    EmployeeResponse emp;
+    GetAllEmployeeResponse getAllEmployee;
+    CreateEmployeeResponse createEmployee;
+    UpdateEmployeeResponse updateEmployee;
+    GetEmployeeDetailResponse getEmployeeDetail;
 
     @BeforeTest
     public void setUp() {
-        baseRequest = new BaseRequest();
-        requestSpecification = baseRequest.build();
-        employeeClient = new EmployeeClient();
-
+       employeeClient = new EmployeeClient();
     }
 
     @Test
     public void getAllEmployeesAndValidate() {
-        emp = employeeClient
-                .getEmployees(requestSpecification.basePath("/employees"))
+        getAllEmployee = employeeClient
+                .getEmployees()
                 .getBody()
-                .as(EmployeeResponse.class);
-        Assert.assertEquals(emp.status, "success");
-        Assert.assertNotNull(emp.data);
+                .as(GetAllEmployeeResponse.class);
+        Assert.assertEquals(getAllEmployee.status, "success");
+        Assert.assertNotNull(getAllEmployee.data);
     }
-
+    @Test
+    public void getEmployeeDetails()
+    {
+        getEmployeeDetail = employeeClient
+                .getEmployee(3)
+                .getBody()
+                .as(GetEmployeeDetailResponse.class);
+        Assert.assertEquals(getEmployeeDetail.status,"success");
+    }
     @Test
     public void createEmployee() {
-        CreateEmployeeRequest createEmployeeRequest = new CreateEmployeeRequest();
-        createEmployeeRequest.setName("test");
-        createEmployeeRequest.setSalary("12333");
-        createEmployeeRequest.setAge("23");
-        System.out.println(employeeClient
-                .postEmployee(requestSpecification
-                        .basePath("/create")
-                        .body(createEmployeeRequest)
-                        .contentType(ContentType.JSON)).getStatusCode());
+
+        createEmployee = employeeClient
+                .postEmployee("Sakshi","20000","23")
+                .as(CreateEmployeeResponse.class);
+        Assert.assertEquals(createEmployee.status,"success");
+        Assert.assertEquals(createEmployee.data.name,"Sakshi");
+        Assert.assertEquals(createEmployee.data.salary,"20000");
+        Assert.assertEquals(createEmployee.data.age,"23");
 
     }
     @Test
     public void updateEmployee()
     {
-        CreateEmployeeRequest createEmployeeRequest = new CreateEmployeeRequest();
-        createEmployeeRequest.setName("test");
-        createEmployeeRequest.setSalary("12333");
-        createEmployeeRequest.setAge("23");
-        System.out.println(employeeClient
-                .updateEmployee(requestSpecification
-                        .basePath("/update/3")
-                        .body(createEmployeeRequest)
-                        .contentType(ContentType.JSON)).getStatusCode());
+        updateEmployee = employeeClient
+                .updateEmployee(3,"Sakshi","20000","23")
+                .as(UpdateEmployeeResponse.class);
+        Assert.assertEquals(updateEmployee.status,"success");
+
+
     }
     @Test
     public  void deleteEmployee()
     {
-        emp = employeeClient
+       /* emp = employeeClient
                 .getEmployees(requestSpecification.basePath("/employees"))
                 .getBody()
-                .as(EmployeeResponse.class);
+                .as(GetAllEmployeeResponse.class);
         Assert.assertEquals(emp.status, "success");
-        Assert.assertNotNull(emp.data);
+        Assert.assertNotNull(emp.data);*/
     }
 }
