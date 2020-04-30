@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.testvagrant.apiautomation.tests.EmployeeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-30T06:07:21" hostname="TV-Macbook-Pro.local" time="2.506">
-  <properties/>
-  <testcase name="createEmployee" classname="com.testvagrant.apiautomation.tests.EmployeeTest" time="2.506"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
