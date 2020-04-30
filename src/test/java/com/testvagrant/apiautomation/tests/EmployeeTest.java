@@ -34,34 +34,6 @@ public class EmployeeTest {
     }
 
     @Test
-    public void getAllEmployeesAndValidate() {
-        getAllEmployee = employeeClient
-                .getEmployees()
-                .getBody()
-                .as(GetAllEmployeeResponse.class);
-
-        Assert.assertEquals(getAllEmployee.status, "success");
-        Assert.assertNotNull(getAllEmployee.data);
-    }
-
-    @Test
-    public void getEmployeeDetails() {
-        int id = Integer.parseInt(getYamlValue("EmployeeDetail.id"));
-        String name = getYamlValue("EmployeeDetail.name");
-        String salary = getYamlValue("EmployeeDetail.salary");
-        String age = getYamlValue("EmployeeDetail.age");
-        getEmployeeDetail = employeeClient
-                .getEmployee(id)
-                .getBody()
-                .as(GetEmployeeDetailResponse.class);
-
-        Assert.assertEquals(getEmployeeDetail.status, "success");
-        Assert.assertEquals(getEmployeeDetail.data.employee_name, name);
-        Assert.assertEquals(getEmployeeDetail.data.employee_salary, salary);
-        Assert.assertEquals(getEmployeeDetail.data.employee_age, age);
-    }
-
-    @Test
     public void createEmployee() {
         String name = getYamlValue("EmployeeDetail.name");
         String salary = getYamlValue("EmployeeDetail.salary");
@@ -107,5 +79,34 @@ public class EmployeeTest {
         Assert.assertEquals(getEmployeeDetail.data.employee_age, age);
 
     }
+
+    @Test
+    public void getAllEmployeesAndValidate() {
+        getAllEmployee = employeeClient
+                .getEmployees()
+                .getBody()
+                .as(GetAllEmployeeResponse.class);
+
+        Assert.assertEquals(getAllEmployee.status, "success");
+        Assert.assertNotNull(getAllEmployee.data);
+    }
+
+    @Test
+    public void getEmployeeDetails() {
+        int id = Integer.parseInt(getYamlValue("EmployeeDetail.id"));
+        String name = getYamlValue("EmployeeDetail.name");
+        String salary = getYamlValue("EmployeeDetail.salary");
+        String age = getYamlValue("EmployeeDetail.age");
+        getEmployeeDetail = employeeClient
+                .getEmployee(id)
+                .getBody()
+                .as(GetEmployeeDetailResponse.class);
+
+        Assert.assertEquals(getEmployeeDetail.status, "success");
+        Assert.assertEquals(getEmployeeDetail.data.employee_name, name);
+        Assert.assertEquals(getEmployeeDetail.data.employee_salary, salary);
+        Assert.assertEquals(getEmployeeDetail.data.employee_age, age);
+    }
+
 
 }
