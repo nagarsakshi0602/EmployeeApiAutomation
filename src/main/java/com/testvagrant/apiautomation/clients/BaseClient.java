@@ -4,14 +4,13 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.when;
 
 public class BaseClient {
     Response response;
     protected RequestSpecification requestSpecification;
 
 
-    public Response get(String basePath) {
+    protected Response get(String basePath) {
 
         response = given()
                 .spec(requestSpecification)
@@ -21,7 +20,7 @@ public class BaseClient {
         return response;
     }
 
-    public Response post(String basePath,Object body) {
+    protected Response post(String basePath, Object body) {
         response = given()
                 .spec(requestSpecification)
                 .basePath(basePath)
@@ -32,7 +31,7 @@ public class BaseClient {
         return response;
     }
 
-    public Response put(String basePath,Object body) {
+    protected Response put(String basePath, Object body) {
         response = given()
                 .spec(requestSpecification)
                 .basePath(basePath)
@@ -42,7 +41,7 @@ public class BaseClient {
         return response;
     }
 
-    public Response delete(RequestSpecification requestSpecification) {
+    protected Response delete(RequestSpecification requestSpecification) {
         response = given().spec(requestSpecification).delete();
         return response;
     }

@@ -21,10 +21,10 @@ public class EmployeeTest {
     UpdateEmployeeResponse updateEmployee;
     GetEmployeeDetailResponse getEmployeeDetail;
 
-    public EmployeeTest()
-    {
+    public EmployeeTest() {
         yaml = new YamlReader("src/test/resources/TestData/data.yml");
     }
+
     @BeforeTest
     public void setUp() {
         employeeClient = new EmployeeClient();

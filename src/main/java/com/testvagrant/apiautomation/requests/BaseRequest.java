@@ -10,11 +10,10 @@ public class BaseRequest {
     private RequestSpecBuilder builder;
     private RequestSpecification requestSpec;
 
-    public RequestSpecification build()
-    {
+    public RequestSpecification build() {
         builder = new RequestSpecBuilder();
         builder.setBaseUri(getProperty("baseUrl"));
         requestSpec = builder.build();
-        return  requestSpec;
+        return requestSpec;
     }
 }

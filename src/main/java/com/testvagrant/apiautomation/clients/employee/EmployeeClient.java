@@ -14,38 +14,40 @@ import static com.testvagrant.apiautomation.utilities.ConfigPropertyReader.getPr
 public class EmployeeClient extends BaseClient {
     Response response;
 
-    public EmployeeClient()
-    {
+    public EmployeeClient() {
         requestSpecification = new BaseRequest().build();
     }
-    public Response postEmployee(String name,String salary,String age) {
 
-       CreateEmployeeRequest createEmployeeRequest = new CreateEmployeeRequestBuilder()
-                .setEmployeeDetails(name,salary,age)
+    public Response postEmployee(String name, String salary, String age) {
+
+        CreateEmployeeRequest createEmployeeRequest = new CreateEmployeeRequestBuilder()
+                .setEmployeeDetails(name, salary, age)
                 .build();
         String basePath = getProperty("createEmployee");
-        return post(basePath,createEmployeeRequest);
+        return post(basePath, createEmployeeRequest);
     }
+
     public Response deleteEmployee(RequestSpecification requestSpecification) {
         response = delete(requestSpecification);
         return response;
     }
-    public Response updateEmployee(int id,String name,String salary,String age) {
+
+    public Response updateEmployee(int id, String name, String salary, String age) {
         UpdateEmployeeRequest updateEmployeeRequest = new UpdateEmployeeRequestBuilder()
-                .setEmployeedetails(name,salary,age)
+                .setEmployeedetails(name, salary, age)
                 .build();
-        String basePath = getProperty("updateEmployee")+id;
-        response = put(basePath,updateEmployeeRequest);
+        String basePath = getProperty("updateEmployee") + id;
+        response = put(basePath, updateEmployeeRequest);
         return response;
     }
-    public Response getEmployees()
-    {
+
+    public Response getEmployees() {
         String basePath = getProperty("allEmployees");
         return get(basePath);
     }
-    public Response getEmployee(int id)
-    {
-        String basePath = getProperty("employee")+id;
+
+    public Response getEmployee(int id) {
+        String basePath = getProperty("employee") + id;
         return get(basePath);
     }
 }
